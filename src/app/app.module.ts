@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './main/app.component';
+import { EmployeesListComponent } from './employees-list/employees-list.component';
+import { EmployeesDetailComponent } from './employees-detail/employees-detail.component';
+import { DataService } from './data.service';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeesListComponent,
+    EmployeesDetailComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, RouterModule.forRoot([])],
+  providers: [DataService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

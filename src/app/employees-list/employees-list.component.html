@@ -1,0 +1,26 @@
+<h2 class="headingListTable">Employee List</h2>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Position</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of employees; let i = index">
+      <td>{{ e.id }}</td>
+      <td>{{ e.name }}</td>
+      <td>{{ e.email }}</td>
+      <td>{{ e.position }}</td>
+      <td>
+        <button [routerLink]="['.']" [queryParams]="{ id: e.id }">
+          Detail
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-employees-detail [employee]="selectedEmployee"></app-employees-detail>
